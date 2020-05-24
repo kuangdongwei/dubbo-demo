@@ -1,0 +1,8 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /luckymoney
+limit:
+  minMoney: 1
+  maxMoney: 2020
+  description: 最小红包金额为${limit.minMoney}元，最大为${limit.maxMoney}元

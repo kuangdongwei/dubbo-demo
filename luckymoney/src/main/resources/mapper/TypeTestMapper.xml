@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springbootdemos.luckymoney.dao.TypeTestMapper" >
+  <resultMap id="BaseResultMap" type="com.springbootdemos.luckymoney.model.TypeTest" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="column_2" property="column2" jdbcType="TINYINT" />
+    <result column="column_3" property="column3" jdbcType="INTEGER" />
+    <result column="column_4" property="column4" jdbcType="SMALLINT" />
+    <result column="column_5" property="column5" jdbcType="INTEGER" />
+    <result column="column_6" property="column6" jdbcType="REAL" />
+    <result column="column_7" property="column7" jdbcType="DOUBLE" />
+    <result column="column_8" property="column8" jdbcType="DECIMAL" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="column_11" property="column11" jdbcType="TIME" />
+    <result column="column_12" property="column12" jdbcType="DATE" />
+    <result column="column_13" property="column13" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, column_2, column_3, column_4, column_5, column_6, column_7, column_8, create_time, 
+    modify_time, column_11, column_12, column_13
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from data_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from data_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.springbootdemos.luckymoney.model.TypeTest" >
+    insert into data_type (id, column_2, column_3, 
+      column_4, column_5, column_6, 
+      column_7, column_8, create_time, 
+      modify_time, column_11, column_12, 
+      column_13)
+    values (#{id,jdbcType=BIGINT}, #{column2,jdbcType=TINYINT}, #{column3,jdbcType=INTEGER}, 
+      #{column4,jdbcType=SMALLINT}, #{column5,jdbcType=INTEGER}, #{column6,jdbcType=REAL}, 
+      #{column7,jdbcType=DOUBLE}, #{column8,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{column11,jdbcType=TIME}, #{column12,jdbcType=DATE}, 
+      #{column13,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.springbootdemos.luckymoney.model.TypeTest" >
+    insert into data_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="column2 != null" >
+        column_2,
+      </if>
+      <if test="column3 != null" >
+        column_3,
+      </if>
+      <if test="column4 != null" >
+        column_4,
+      </if>
+      <if test="column5 != null" >
+        column_5,
+      </if>
+      <if test="column6 != null" >
+        column_6,
+      </if>
+      <if test="column7 != null" >
+        column_7,
+      </if>
+      <if test="column8 != null" >
+        column_8,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+      <if test="column11 != null" >
+        column_11,
+      </if>
+      <if test="column12 != null" >
+        column_12,
+      </if>
+      <if test="column13 != null" >
+        column_13,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="column2 != null" >
+        #{column2,jdbcType=TINYINT},
+      </if>
+      <if test="column3 != null" >
+        #{column3,jdbcType=INTEGER},
+      </if>
+      <if test="column4 != null" >
+        #{column4,jdbcType=SMALLINT},
+      </if>
+      <if test="column5 != null" >
+        #{column5,jdbcType=INTEGER},
+      </if>
+      <if test="column6 != null" >
+        #{column6,jdbcType=REAL},
+      </if>
+      <if test="column7 != null" >
+        #{column7,jdbcType=DOUBLE},
+      </if>
+      <if test="column8 != null" >
+        #{column8,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="column11 != null" >
+        #{column11,jdbcType=TIME},
+      </if>
+      <if test="column12 != null" >
+        #{column12,jdbcType=DATE},
+      </if>
+      <if test="column13 != null" >
+        #{column13,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.springbootdemos.luckymoney.model.TypeTest" >
+    update data_type
+    <set >
+      <if test="column2 != null" >
+        column_2 = #{column2,jdbcType=TINYINT},
+      </if>
+      <if test="column3 != null" >
+        column_3 = #{column3,jdbcType=INTEGER},
+      </if>
+      <if test="column4 != null" >
+        column_4 = #{column4,jdbcType=SMALLINT},
+      </if>
+      <if test="column5 != null" >
+        column_5 = #{column5,jdbcType=INTEGER},
+      </if>
+      <if test="column6 != null" >
+        column_6 = #{column6,jdbcType=REAL},
+      </if>
+      <if test="column7 != null" >
+        column_7 = #{column7,jdbcType=DOUBLE},
+      </if>
+      <if test="column8 != null" >
+        column_8 = #{column8,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="column11 != null" >
+        column_11 = #{column11,jdbcType=TIME},
+      </if>
+      <if test="column12 != null" >
+        column_12 = #{column12,jdbcType=DATE},
+      </if>
+      <if test="column13 != null" >
+        column_13 = #{column13,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.springbootdemos.luckymoney.model.TypeTest" >
+    update data_type
+    set column_2 = #{column2,jdbcType=TINYINT},
+      column_3 = #{column3,jdbcType=INTEGER},
+      column_4 = #{column4,jdbcType=SMALLINT},
+      column_5 = #{column5,jdbcType=INTEGER},
+      column_6 = #{column6,jdbcType=REAL},
+      column_7 = #{column7,jdbcType=DOUBLE},
+      column_8 = #{column8,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      column_11 = #{column11,jdbcType=TIME},
+      column_12 = #{column12,jdbcType=DATE},
+      column_13 = #{column13,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

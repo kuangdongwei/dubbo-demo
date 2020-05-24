@@ -1,0 +1,32 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /luckymoney
+limit:
+  minMoney: 1
+  maxMoney: 200
+  description: 最小红包金额为${limit.minMoney}元，最大为${limit.maxMoney}元
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/qq?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: mysql123456
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+  aop:
+    auto: true
+    proxy-target-class: false
+logging:
+  config: classpath:logging-config.xml
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.springbootdemos.luckymoney.model
+  configuration:
+    cache-enabled: true

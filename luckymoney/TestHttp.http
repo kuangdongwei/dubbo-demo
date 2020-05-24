@@ -1,0 +1,31 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+POST http://localhost:8089/luckymoney/order/add
+Content-Type: application/json
+
+{
+  "orderId": 2020042401,
+  "userId": 2323,
+  "userName": "jordan",
+  "goods": "big ship",
+  "payment": 300000000
+}
+
+###
+
+POST http://localhost:8089/luckymoney/order/addPerson
+Content-Type: application/json
+
+{
+  "id": "2020123",
+  "name": "一头小菜鸡",
+  "sex": "man",
+  "age": "24"
+}
+
+###
